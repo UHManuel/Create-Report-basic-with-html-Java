@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <title>Survey Form</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Survey Form</h1>
+    <p>Please take a moment to complete the following survey:</p>
+    <form id="surveyForm">
+      
+      
+      
+      <div class="form-group row">
+        <div class="col-sm-2">Total Family Income?</div>
+        <div class="col-sm-10">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="income" id="34" value="34">
+            <label class="form-check-label" for="34">$34,999 or Less</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="income" id="35" value="35">
+            <label class="form-check-label" for="35">$35,000 - $69,999</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="income" id="70" value="70">
+            <label class="form-check-label" for="70">$70,000 $99,999</label>
+          </div>
+		  <div class="form-check">
+            <input class="form-check-input" type="radio" name="income" id="100" value="100">
+            <label class="form-check-label" for="100">$100,000 or more</label>
+          </div>
+        </div>
+      </div>
+	  <div class="form-group row">
+        <div class="col-sm-2">Total Number of Children</div>
+        <div class="col-sm-10">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="family" id="1" value="1">
+            <label class="form-check-label" for="1">1</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="family" id="2" value="2">
+            <label class="form-check-label" for="2">2</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="family" id="3" value="3">
+            <label class="form-check-label" for="3">3</label>
+          </div>
+		  <div class="form-check">
+            <input class="form-check-input" type="radio" name="family" id="4" value="4">
+            <label class="form-check-label" for="4">4</label>
+          </div>
+		  <div class="form-check">
+            <input class="form-check-input" type="radio" name="family" id="5" value="5">
+            <label class="form-check-label" for="5">5</label>
+          </div>
+		  <div class="form-check">
+            <input class="form-check-input" type="radio" name="family" id="6" value="6">
+            <label class="form-check-label" for="6">6</label>
+          </div>
+		  <div class="form-check">
+            <input class="form-check-input" type="radio" name="family" id="7" value="7">
+            <label class="form-check-label" for="7">7</label>
+          </div>
+		  <div class="form-check">
+            <input class="form-check-input" type="radio" name="family" id="8" value="8">
+            <label class="form-check-label" for="8">8</label>
+          </div>
+		  <div class="form-check">
+            <input class="form-check-input" type="radio" name="family" id="9" value="9">
+            <label class="form-check-label" for="9">9</label>
+          </div>
+		  <div class="form-check">
+            <input class="form-check-input" type="radio" name="family" id="10" value="10">
+            <label class="form-check-label" for="10">10</label>
+          </div>
+		  
+        </div>
+      </div>
+         
+      <div class="form-group row">
+        <div class="col-sm-10">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </form>
+    <p id="output"></p>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script>
+    document.querySelector('#surveyForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      
+      const income = document.querySelector('input[name="income"]:checked').value;
+      const family = document.querySelector('input[name="family"]:checked').value;
+      
+      let output = 'As a reminder additional tuition for students in Pre-K is $500.00 per child. With the addition of New Student Application fee(per child) of $50.00.             ';  
+		
+      switch (true) {
+  case family === '1' && income === '34':
+    output += '\n\n Total family obligation for 1 child with a total family income of $34,999 or below is $2,300.';
+    break;
+  case family === '1' && income === '35':
+    output += '\n\n Total family obligation for 1 child with a total family income of $35,000 - $69,999 is $3,000.';
+    break;
+  case family === '1' && income === '70':
+    output += '\n\n Total family obligation for 1 child with a total family income of $70,000 - $99,999 is $3,500.';
+    break;
+  case family === '1' && income === '100':
+    output += '\n\n Total family obligation for 1 child with a total family income of $100,000 or more is $6,200.';
+    break;
+  
+	
+	case family === '2' && income === '34':
+    output += '\n\n Total family obligation for 2 children with a total family income of $34,999 or below is $4,600.';
+    break;
+  case family === '2' && income === '35':
+    output += '\n\n Total family obligation for 2 children with a total family income of $35,000 - $69,999 is $5,300.';
+    break;
+  case family === '2' && income === '70':
+    output += '\n\n Total family obligation for 2 children with a total family income of $70,000 - $99,999 is $5,800.';
+    break;
+  case family === '2' && income === '100':
+    output += '\n\n Total family obligation for 2 children with a total family income of $100,000 or more is $11,000.';
+    break;
+	
+	case family === '3' && income === '34':
+    output += '\n\n Total family obligation for 3 children with a total family income of $34,999 or below is $6,900.';
+    break;
+  case family === '3' && income === '35':
+    output += '\n\n Total family obligation for 3 children with a total family income of $35,000 - $69,999 is $7,400.';
+    break;
+  case family === '3' && income === '70':
+    output += '\n\n Total family obligation for 3 children with a total family income of $70,000 - $99,999 is $7,900.';
+    break;
+  case family === '3' && income === '100':
+    output += '\n\n Total family obligation for 3 children with a total family income of $100,000 or more is $14,000.';
+    break;
+	
+	case family === '4' && income === '34':
+    output += '\n\n Total family obligation for 4 children with a total family income of $34,999 or below is $8,400.';
+    break;
+	case family === '4' && income === '35':
+    output += '\n\n Total family obligation for 4 children with a total family income of $35,000 - $69,999 is $8,900.';
+    break;
+	case family === '4' && income === '70':
+    output += '\n\n Total family obligation for 4 children with a total family income of $70,000 - $99,999 is $9,400.';
+    break;
+	case family === '4' && income === '100':
+    output += '\n\n Total family obligation for 4 children with a total family income of $100,000 or more is $15,500.';
+    break;
+	
+	case family === '5' && income === '34':
+    output += '\n\n Total family obligation for 5 children with a total family income of $34,999 or below is $9,900.';
+    break;
+	case family === '5' && income === '35':
+    output += '\n\n Total family obligation for 5 children with a total family income of $35,000 - $69,999 is $10,400.';
+    break;
+	case family === '5' && income === '70':
+    output += '\n\n Total family obligation for 5 children with a total family income of $70,000 - $99,999 is $10,900.';
+    break;
+	case family === '5' && income === '100':
+    output += '\n\n Total family obligation for 5 children with a total family income of $100,000 or more is $17,000.';
+    break;
+
+	case family === '6' && income === '34':
+    output += '\n\n Total family obligation for 6 children with a total family income of $34,999 or below is $11,400.';
+    break;
+	case family === '6' && income === '35':
+    output += '\n\n Total family obligation for 6 children with a total family income of $35,000 - $69,999 is $11,900.';
+    break;
+	case family === '6' && income === '70':
+    output += '\n\n Total family obligation for 6 children with a total family income of $70,000 - $99,999 is $12,400.';
+    break;
+	case family === '6' && income === '100':
+    output += '\n\n Total family obligation for 6 children with a total family income of $100,000 or more is $18,500.';
+    break;
+	
+	case family === '7' && income === '34':
+    output += '\n\n Total family obligation for 7 children with a total family income of $34,999 or below is $12,900.';
+    break;
+	case family === '7' && income === '35':
+    output += '\n\n Total family obligation for 7 children with a total family income of $35,000 - $69,999 is $13,400.';
+    break;
+	case family === '7' && income === '70':
+    output += '\n\n Total family obligation for 7 children with a total family income of $70,000 - $99,999 is $13,900.';
+    break;
+	case family === '7' && income === '100':
+    output += '\n\n Total family obligation for 7 children with a total family income of $100,000 or more is $20,000.';
+    break;
+	
+	case family === '8' && income === '34':
+    output += '\n\n Total family obligation for 8 children with a total family income of $34,999 or below is $14,400.';
+    break;
+	case family === '8' && income === '35':
+    output += '\n\n Total family obligation for 8 children with a total family income of $35,000 - $69,999 is $14,900.';
+    break;
+	case family === '8' && income === '70':
+    output += '\n\n Total family obligation for 8 children with a total family income of $70,000 - $99,999 is $15,400.';
+    break;
+	case family === '8' && income === '100':
+    output += '\n\n Total family obligation for 8 children with a total family income of $100,000 or more is $21,500.';
+    break;
+	
+	case family === '9' && income === '34':
+    output += '\n\n Total family obligation for 9 children with a total family income of $34,999 or below is $15,900.';
+    break;
+	case family === '9' && income === '35':
+    output += '\n\n Total family obligation for 9 children with a total family income of $35,000 - $69,999 is $16,400.';
+    break;
+	case family === '9' && income === '70':
+    output += '\n\n Total family obligation for 9 children with a total family income of $70,000 - $99,999 is $16,900.';
+    break;
+	case family === '9' && income === '100':
+    output += '\n\n Total family obligation for 9 children with a total family income of $100,000 or more is $23,000.';
+    break;
+	
+	case family === '10' && income === '34':
+    output += '\n\n Total family obligation for 10 children with a total family income of $34,999 or below is $17,400.';
+    break;
+	case family === '10' && income === '35':
+    output += '\n\n Total family obligation for 10 children with a total family income of $35,000 - $69,999 is $17,900.';
+    break;
+	case family === '10' && income === '70':
+    output += '\n\n Total family obligation for 10 children with a total family income of $70,000 - $99,999 is $18,400.';
+    break;
+	case family === '10' && income === '100':
+    output += '\n\n Total family obligation for 10 children with a total family income of $100,000 or more is $24,500.';
+    break;
+}
+  
+
+
+      document.querySelector('#output').textContent = output;
+    });
+  </script>
+</body>
+</html>
+
